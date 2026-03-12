@@ -53,13 +53,23 @@ export class QuizService {
         ? [...this.allQuestions]
         : this.allQuestions.filter((q) => q.wordClass === wordClass);
 
-    // Shuffle
+    // Shuffle question order
     for (let i = pool.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [pool[i], pool[j]] = [pool[j], pool[i]];
     }
 
-    this.currentQuestions.set(pool.slice(0, Math.min(count, pool.length)));
+    // Shuffle options within each question (correctAnswer is matched by value, not position)
+    const shuffled = pool.slice(0, Math.min(count, pool.length)).map(q => {
+      const options = [...q.options];
+      for (let i = options.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [options[i], options[j]] = [options[j], options[i]];
+      }
+      return { ...q, options };
+    });
+
+    this.currentQuestions.set(shuffled);
     this.currentIndex.set(0);
     this.userAnswers.set(new Map());
     this.quizActive.set(true);
