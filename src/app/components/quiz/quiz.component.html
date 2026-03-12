@@ -20,7 +20,10 @@
       <div class="options">
         @for (option of question.options; track option) {
           <button
-            [class]="getOptionClass(option)"
+            class="option-btn"
+            [class.correct]="answered() && option === question.correctAnswer"
+            [class.incorrect]="answered() && option === selectedAnswer() && !isCorrect()"
+            [class.dimmed]="answered() && option !== question.correctAnswer && option !== selectedAnswer()"
             (click)="selectAnswer(option)"
             [disabled]="answered()"
           >
