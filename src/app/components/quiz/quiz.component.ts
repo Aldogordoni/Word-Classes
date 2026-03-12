@@ -60,10 +60,10 @@ export class QuizComponent implements OnInit {
   }
 
   getOptionClass(option: string): string {
-    if (!this.answered()) return '';
-    if (option === this.question?.correctAnswer) return 'correct';
-    if (option === this.selectedAnswer() && !this.isCorrect()) return 'incorrect';
-    return 'dimmed';
+    if (!this.answered()) return 'option-btn';
+    if (option === this.question?.correctAnswer) return 'option-btn correct';
+    if (option === this.selectedAnswer() && !this.isCorrect()) return 'option-btn incorrect';
+    return 'option-btn dimmed';
   }
 
   next(): void {

@@ -20,7 +20,6 @@
       <div class="options">
         @for (option of question.options; track option) {
           <button
-            class="option-btn"
             [class]="getOptionClass(option)"
             (click)="selectAnswer(option)"
             [disabled]="answered()"
