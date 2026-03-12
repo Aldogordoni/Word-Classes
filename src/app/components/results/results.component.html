@@ -1,5 +1,6 @@
 @if (result) {
   <div class="results-container">
+    <button class="back-btn" (click)="goHome()">← Home</button>
     <div class="results-card">
       <div class="stars">
         @for (s of [1, 2, 3]; track s) {

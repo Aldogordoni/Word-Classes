@@ -1,0 +1,116 @@
+<div class="learn-container">
+
+  <!-- Top bar -->
+  <div class="top-bar">
+    <button class="home-btn" (click)="goHome()">← Home</button>
+    <h1>Learn Word Classes</h1>
+    <button class="quiz-btn" (click)="startQuiz()">Take a Quiz</button>
+  </div>
+
+  <!-- Tab bar -->
+  <nav class="tab-bar">
+    @for (c of content; track c.id) {
+      <button
+        class="tab"
+        [class.active]="activeId === c.id"
+        [style.--tab-colour]="c.colour"
+        (click)="select(c.id)"
+      >
+        <span class="tab-icon">{{ c.icon }}</span>
+        <span class="tab-label">{{ c.label }}</span>
+      </button>
+    }
+  </nav>
+
+  <!-- Content panel -->
+  <div class="panel">
+
+    <!-- Header -->
+    <div class="panel-header" [style.background]="active.colour">
+      <span class="panel-icon">{{ active.icon }}</span>
+      <div>
+        <h2>{{ active.label }}</h2>
+        <p class="definition">{{ active.definition }}</p>
+      </div>
+    </div>
+
+    <!-- Key fact -->
+    <div class="key-fact">
+      <span class="key-fact-icon">💡</span>
+      <p>{{ active.keyFact }}</p>
+    </div>
+
+    <!-- Types -->
+    <section class="section">
+      <h3>Types of {{ active.label }}</h3>
+      <div class="types-grid">
+        @for (t of active.types; track t.name) {
+          <div class="type-card" [style.border-left-color]="active.colour">
+            <h4>{{ t.name }}</h4>
+            <p>{{ t.description }}</p>
+            <div class="examples-chips">
+              @for (ex of t.examples; track ex) {
+                <span class="chip" [style.background]="active.colour + '18'" [style.color]="active.colour">{{ ex }}</span>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    </section>
+
+    <!-- Sentence examples -->
+    <section class="section">
+      <h3>Examples in sentences</h3>
+      <div class="examples-list">
+        @for (ex of active.sentenceExamples; track ex.sentence) {
+          <div class="example-row">
+            <div class="example-sentence">
+              {{ ex.sentence }}
+            </div>
+            <div class="example-meta">
+              <span class="example-word" [style.background]="active.colour + '25'" [style.color]="active.colour">{{ ex.word }}</span>
+              @if (ex.note) {
+                <span class="example-note">{{ ex.note }}</span>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    </section>
+
+    <!-- Watch out -->
+    <section class="section watch-out-section">
+      <h3>⚠️ Watch out for…</h3>
+      <ul class="watch-list">
+        @for (w of active.watchOut; track w) {
+          <li>{{ w }}</li>
+        }
+      </ul>
+    </section>
+
+    <!-- SATs tip -->
+    <div class="sats-tip">
+      <span class="sats-tip-icon">🎯</span>
+      <div>
+        <strong>SATs Tip</strong>
+        <p>{{ active.satsTip }}</p>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="panel-nav">
+      @if (content.indexOf(active) > 0) {
+        <button class="nav-btn" (click)="select(content[content.indexOf(active) - 1].id)">
+          ← {{ content[content.indexOf(active) - 1].label }}
+        </button>
+      }
+      <div class="spacer"></div>
+      @if (content.indexOf(active) < content.length - 1) {
+        <button class="nav-btn" (click)="select(content[content.indexOf(active) + 1].id)">
+          {{ content[content.indexOf(active) + 1].label }} →
+        </button>
+      }
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,370 @@
+.learn-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+/* ── Top bar ─────────────────────────────────── */
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.top-bar h1 {
+  font-size: 1.6rem;
+  color: #2d3436;
+  margin: 0;
+}
+
+.home-btn,
+.quiz-btn {
+  padding: 0.55rem 1.1rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+
+.home-btn {
+  background: white;
+  border: 2px solid #6c5ce7;
+  color: #6c5ce7;
+}
+
+.home-btn:hover {
+  background: #f8f7ff;
+}
+
+.quiz-btn {
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  border: none;
+  color: white;
+}
+
+.quiz-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(108, 92, 231, 0.3);
+}
+
+/* ── Tab bar ─────────────────────────────────── */
+
+.tab-bar {
+  display: flex;
+  gap: 0.4rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  scrollbar-width: thin;
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.55rem 0.75rem;
+  border: 2px solid #dfe6e9;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+  flex-shrink: 0;
+  min-width: 76px;
+}
+
+.tab:hover {
+  border-color: var(--tab-colour);
+  background: color-mix(in srgb, var(--tab-colour) 8%, white);
+}
+
+.tab.active {
+  border-color: var(--tab-colour);
+  background: color-mix(in srgb, var(--tab-colour) 12%, white);
+}
+
+.tab-icon {
+  font-size: 1.4rem;
+}
+
+.tab-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #2d3436;
+}
+
+/* ── Panel ───────────────────────────────────── */
+
+.panel {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.panel-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 2rem;
+  color: white;
+}
+
+.panel-icon {
+  font-size: 3rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.panel-header h2 {
+  font-size: 1.8rem;
+  margin: 0 0 0.4rem;
+}
+
+.definition {
+  font-size: 1.05rem;
+  opacity: 0.95;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.key-fact {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: #fffbea;
+  border-left: 4px solid #fdcb6e;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem;
+  border-radius: 0 10px 10px 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #2d3436;
+}
+
+.key-fact-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+/* ── Section ─────────────────────────────────── */
+
+.section {
+  padding: 1.5rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.section h3 {
+  font-size: 1.15rem;
+  color: #2d3436;
+  margin-bottom: 1rem;
+}
+
+/* ── Types grid ──────────────────────────────── */
+
+.types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.85rem;
+}
+
+.type-card {
+  padding: 1rem;
+  border-left: 4px solid;
+  border-radius: 0 10px 10px 0;
+  background: #fafafa;
+}
+
+.type-card h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+  color: #2d3436;
+}
+
+.type-card p {
+  font-size: 0.88rem;
+  color: #636e72;
+  margin-bottom: 0.6rem;
+  line-height: 1.4;
+}
+
+.examples-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.chip {
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 20px;
+}
+
+/* ── Sentence examples ───────────────────────── */
+
+.examples-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.example-row {
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+}
+
+.example-sentence {
+  font-size: 1.05rem;
+  color: #2d3436;
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
+.example-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.example-word {
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+}
+
+.example-note {
+  font-size: 0.83rem;
+  color: #636e72;
+}
+
+/* ── Watch out ───────────────────────────────── */
+
+.watch-out-section {
+  background: #fff9f0;
+}
+
+.watch-out-section h3 {
+  color: #b35200;
+}
+
+.watch-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.watch-list li {
+  font-size: 0.95rem;
+  color: #2d3436;
+  line-height: 1.5;
+  padding-left: 1.4rem;
+  position: relative;
+}
+
+.watch-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #e67e22;
+  font-weight: 700;
+}
+
+/* ── SATs tip ────────────────────────────────── */
+
+.sats-tip {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  margin: 1.5rem;
+  padding: 1.1rem 1.25rem;
+  background: #f0f7ff;
+  border-left: 4px solid #6c5ce7;
+  border-radius: 0 10px 10px 0;
+}
+
+.sats-tip-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.sats-tip strong {
+  display: block;
+  color: #6c5ce7;
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.sats-tip p {
+  font-size: 0.92rem;
+  color: #2d3436;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Panel nav ───────────────────────────────── */
+
+.panel-nav {
+  display: flex;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.nav-btn {
+  padding: 0.6rem 1.2rem;
+  border: 2px solid #dfe6e9;
+  border-radius: 10px;
+  background: white;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  color: #2d3436;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.nav-btn:hover {
+  border-color: #6c5ce7;
+  background: #f8f7ff;
+}
+
+/* ── Responsive ──────────────────────────────── */
+
+@media (max-width: 600px) {
+  .top-bar h1 {
+    font-size: 1.2rem;
+  }
+
+  .panel-header {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .panel-icon {
+    font-size: 2rem;
+  }
+
+  .panel-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .types-grid {
+    grid-template-columns: 1fr;
+  }
+}

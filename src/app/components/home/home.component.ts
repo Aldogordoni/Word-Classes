@@ -48,4 +48,8 @@ export class HomeComponent {
     this.selectedClass = wc;
     this.startQuiz();
   }
+
+  goLearn(): void {
+    this.router.navigate(['/learn']);
+  }
 }

@@ -1385,4 +1385,47 @@ export const QUESTION_BANK: Question[] = [
     options: ['Adjective', 'Verb', 'Noun', 'Adverb'],
     correctAnswer: 'Adjective',
     explanation: '"Sleeping" is a present-participle adjective here — it describes the noun "child".' },
+
+  // ═══════════════════════════════════════════════════════
+  // POSSESSIVE PRONOUNS (extra focused set)
+  // ═══════════════════════════════════════════════════════
+
+  { id: 201, type: 'identify', difficulty: 'easy', wordClass: 'pronoun',
+    sentence: 'That bag is **hers**.',
+    highlightedWord: 'hers',
+    options: ['Pronoun', 'Determiner', 'Noun', 'Adjective'],
+    correctAnswer: 'Pronoun',
+    explanation: '"Hers" is a possessive pronoun — it stands alone and shows the bag belongs to her. There is no noun after it.' },
+
+  { id: 202, type: 'identify', difficulty: 'easy', wordClass: 'pronoun',
+    sentence: 'The blue coat is **theirs**.',
+    highlightedWord: 'theirs',
+    options: ['Pronoun', 'Determiner', 'Adjective', 'Noun'],
+    correctAnswer: 'Pronoun',
+    explanation: '"Theirs" is a possessive pronoun — it replaces "their coat" and stands alone.' },
+
+  { id: 203, type: 'classify', difficulty: 'easy', wordClass: 'pronoun',
+    sentence: 'Which of these is a possessive pronoun?',
+    options: ['ours', 'our', 'we', 'us'],
+    correctAnswer: 'ours',
+    explanation: '"Ours" is a possessive pronoun — it stands alone to show ownership. "Our" is a possessive determiner (it must be followed by a noun).' },
+
+  { id: 204, type: 'classify', difficulty: 'medium', wordClass: 'pronoun',
+    sentence: 'In which sentence is a possessive PRONOUN used (not a possessive determiner)?',
+    options: ['The decision is theirs to make.', 'Their decision surprised us.', 'Their team won the match.', 'Their garden looks lovely.'],
+    correctAnswer: 'The decision is theirs to make.',
+    explanation: '"Theirs" stands alone after the verb — it is a possessive pronoun. In the other sentences, "their" comes before a noun, making it a possessive determiner.' },
+
+  { id: 205, type: 'identify', difficulty: 'medium', wordClass: 'pronoun',
+    sentence: 'I forgot my pencil — can I borrow **yours**?',
+    highlightedWord: 'yours',
+    options: ['Pronoun', 'Determiner', 'Adjective', 'Noun'],
+    correctAnswer: 'Pronoun',
+    explanation: '"Yours" is a possessive pronoun — it stands in place of "your pencil" without repeating the noun.' },
+
+  { id: 206, type: 'classify', difficulty: 'hard', wordClass: 'pronoun',
+    sentence: 'What is the difference between "her book" and "hers"?',
+    options: ['"her" is a determiner; "hers" is a pronoun', '"her" is a pronoun; "hers" is a determiner', 'Both are pronouns', 'Both are determiners'],
+    correctAnswer: '"her" is a determiner; "hers" is a pronoun',
+    explanation: '"Her" comes before a noun ("her book") so it is a possessive determiner. "Hers" stands alone ("the book is hers") so it is a possessive pronoun.' },
 ];

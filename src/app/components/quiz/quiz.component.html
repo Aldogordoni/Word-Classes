@@ -2,6 +2,7 @@
   <div class="quiz-container">
     <!-- Progress bar -->
     <div class="progress-section">
+      <button class="back-btn" (click)="goHome()">← Home</button>
       <div class="progress-text">Question {{ questionNumber }} of {{ totalQuestions }}</div>
       <div class="progress-bar">
         <div class="progress-fill" [style.width.%]="progress"></div>

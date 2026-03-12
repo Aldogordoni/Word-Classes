@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { QuizService } from '../../services/quiz.service';
@@ -11,7 +11,7 @@ import { WORD_CLASS_INFO } from '../../models/question.model';
   templateUrl: './quiz.component.html',
   styleUrl: './quiz.component.css',
 })
-export class QuizComponent {
+export class QuizComponent implements OnInit {
   selectedAnswer = signal<string | null>(null);
   answered = signal(false);
   isCorrect = signal(false);
@@ -19,8 +19,10 @@ export class QuizComponent {
 
   constructor(
     public quizService: QuizService,
-    private router: Router,
-  ) {
+    private readonly router: Router,
+  ) {}
+
+  ngOnInit(): void {
     if (!this.quizService.quizActive()) {
       this.router.navigate(['/']);
     }
@@ -43,7 +45,7 @@ export class QuizComponent {
   }
 
   formatSentence(sentence: string): string {
-    return sentence.replace(/\*\*(.*?)\*\*/g, '<strong class="highlighted-word">$1</strong>');
+    return sentence.replaceAll(/\*\*(.*?)\*\*/g, '<strong class="highlighted-word">$1</strong>');
   }
 
   selectAnswer(answer: string): void {
@@ -72,6 +74,11 @@ export class QuizComponent {
     if (this.quizService.quizFinished()) {
       this.router.navigate(['/results']);
     }
+  }
+
+  goHome(): void {
+    this.quizService.resetQuiz();
+    this.router.navigate(['/']);
   }
 
   getDifficultyLabel(): string {

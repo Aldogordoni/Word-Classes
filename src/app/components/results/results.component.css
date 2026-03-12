@@ -4,6 +4,26 @@
   padding: 2rem 1rem;
 }
 
+.back-btn {
+  background: white;
+  border: 2px solid #dfe6e9;
+  border-radius: 8px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #636e72;
+  cursor: pointer;
+  font-family: inherit;
+  margin-bottom: 1rem;
+  display: block;
+  transition: border-color 0.12s, color 0.12s;
+}
+
+.back-btn:hover {
+  border-color: #6c5ce7;
+  color: #6c5ce7;
+}
+
 .results-card {
   background: white;
   border-radius: 20px;
@@ -145,7 +165,7 @@
   padding: 2px 6px;
   border-radius: 4px;
   font-weight: 700;
-  color: #d63031;
+  color: #7a1500;
 }
 
 .review-answers {

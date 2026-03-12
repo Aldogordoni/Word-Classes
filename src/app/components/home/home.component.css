@@ -25,6 +25,26 @@
 .description {
   color: #636e72;
   font-size: 1.05rem;
+  margin-bottom: 1rem;
+}
+
+.learn-btn {
+  margin-top: 0.25rem;
+  padding: 0.65rem 1.5rem;
+  border: 2px solid #6c5ce7;
+  border-radius: 12px;
+  background: white;
+  color: #6c5ce7;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s, transform 0.12s;
+}
+
+.learn-btn:hover {
+  background: #f8f7ff;
+  transform: translateY(-2px);
 }
 
 .settings-bar {
