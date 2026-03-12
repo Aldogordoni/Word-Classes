@@ -10,7 +10,10 @@
 
     <!-- Question card -->
     <div class="question-card">
-      <div class="question-type">{{ getQuestionTypeLabel() }}</div>
+      <div class="question-meta">
+        <span class="question-type">{{ getQuestionTypeLabel() }}</span>
+        <span class="difficulty-badge" [class]="getDifficultyClass()">{{ getDifficultyLabel() }}</span>
+      </div>
       <p class="sentence" [innerHTML]="formatSentence(question.sentence)"></p>
 
       <div class="options">

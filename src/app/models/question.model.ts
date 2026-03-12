@@ -8,6 +8,8 @@ export type WordClass =
   | 'conjunction'
   | 'determiner';
 
+export type Difficulty = 'easy' | 'medium' | 'hard';
+
 export interface Question {
   id: number;
   type: 'identify' | 'classify' | 'fill-blank';
@@ -16,6 +18,7 @@ export interface Question {
   options: string[];
   correctAnswer: string;
   wordClass: WordClass;
+  difficulty: Difficulty;
   explanation: string;
 }
 

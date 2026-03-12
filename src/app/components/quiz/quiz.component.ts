@@ -74,6 +74,19 @@ export class QuizComponent {
     }
   }
 
+  getDifficultyLabel(): string {
+    switch (this.question?.difficulty) {
+      case 'easy': return '🟢 Easy';
+      case 'medium': return '🟡 Medium';
+      case 'hard': return '🔴 Hard';
+      default: return '';
+    }
+  }
+
+  getDifficultyClass(): string {
+    return this.question?.difficulty ?? '';
+  }
+
   getQuestionTypeLabel(): string {
     switch (this.question?.type) {
       case 'identify':
