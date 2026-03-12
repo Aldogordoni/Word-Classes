@@ -1,0 +1,42 @@
+<div class="home-container">
+  <header class="hero">
+    <h1>Word Classes Practice</h1>
+    <p class="subtitle">Year 6 SATs Revision</p>
+    <p class="description">
+      Choose a word class to practise, or try them all mixed together!
+    </p>
+  </header>
+
+  <div class="settings-bar">
+    <label for="count">Questions per quiz:</label>
+    <select id="count" [(ngModel)]="questionCount">
+      <option [value]="5">5</option>
+      <option [value]="10">10</option>
+      <option [value]="15">15</option>
+      <option [value]="20">20</option>
+    </select>
+  </div>
+
+  <div class="word-class-grid">
+    @for (wc of wordClasses; track wc) {
+      <button
+        class="word-class-card"
+        [style.border-color]="getColour(wc)"
+        [style.--card-colour]="getColour(wc)"
+        (click)="selectAndStart(wc)"
+      >
+        <span class="card-icon">{{ wc === 'all' ? '🌟' :
+          wc === 'noun' ? '📦' :
+          wc === 'verb' ? '🏃' :
+          wc === 'adjective' ? '🎨' :
+          wc === 'adverb' ? '⚡' :
+          wc === 'pronoun' ? '👤' :
+          wc === 'preposition' ? '📍' :
+          wc === 'conjunction' ? '🔗' :
+          '🔢' }}</span>
+        <span class="card-label">{{ getLabel(wc) }}</span>
+        <span class="card-desc">{{ getDescription(wc) }}</span>
+      </button>
+    }
+  </div>
+</div>

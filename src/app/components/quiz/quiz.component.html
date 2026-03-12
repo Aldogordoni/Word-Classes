@@ -1,0 +1,44 @@
+@if (question) {
+  <div class="quiz-container">
+    <!-- Progress bar -->
+    <div class="progress-section">
+      <div class="progress-text">Question {{ questionNumber }} of {{ totalQuestions }}</div>
+      <div class="progress-bar">
+        <div class="progress-fill" [style.width.%]="progress"></div>
+      </div>
+    </div>
+
+    <!-- Question card -->
+    <div class="question-card">
+      <div class="question-type">{{ getQuestionTypeLabel() }}</div>
+      <p class="sentence" [innerHTML]="formatSentence(question.sentence)"></p>
+
+      <div class="options">
+        @for (option of question.options; track option) {
+          <button
+            class="option-btn"
+            [class]="getOptionClass(option)"
+            (click)="selectAnswer(option)"
+            [disabled]="answered()"
+          >
+            {{ option }}
+          </button>
+        }
+      </div>
+
+      <!-- Feedback -->
+      @if (answered()) {
+        <div class="feedback" [class.feedback-correct]="isCorrect()" [class.feedback-incorrect]="!isCorrect()">
+          <div class="feedback-icon">{{ isCorrect() ? '✅' : '❌' }}</div>
+          <div class="feedback-text">
+            <strong>{{ isCorrect() ? 'Well done!' : 'Not quite!' }}</strong>
+            <p>{{ question.explanation }}</p>
+          </div>
+        </div>
+        <button class="next-btn" (click)="next()">
+          {{ questionNumber === totalQuestions ? 'See Results' : 'Next Question' }}
+        </button>
+      }
+    </div>
+  </div>
+}
