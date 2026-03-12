@@ -28,6 +28,21 @@
   margin-bottom: 1rem;
 }
 
+.question-count {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.count-loading {
+  color: #b2bec3;
+  font-style: italic;
+}
+
+.count-ready {
+  color: #00b894;
+  font-weight: 700;
+}
+
 .learn-btn {
   margin-top: 0.25rem;
   padding: 0.65rem 1.5rem;

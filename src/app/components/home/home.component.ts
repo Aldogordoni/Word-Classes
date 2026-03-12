@@ -25,6 +25,9 @@ export class HomeComponent {
     this.wordClasses = this.quizService.getAvailableWordClasses();
   }
 
+  get loadingGenerated() { return this.quizService.loadingGenerated(); }
+  get totalAvailable() { return this.quizService.totalAvailable(); }
+
   getLabel(wc: WordClass | 'all'): string {
     return wc === 'all' ? 'All Word Classes' : WORD_CLASS_INFO[wc].label;
   }

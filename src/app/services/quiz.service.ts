@@ -1,10 +1,17 @@
-import { Injectable, signal, computed } from '@angular/core';
+import { Injectable, signal, computed, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Question, QuizResult, WordClass } from '../models/question.model';
 import { QUESTION_BANK } from './question-bank';
 
 @Injectable({ providedIn: 'root' })
 export class QuizService {
-  private allQuestions = QUESTION_BANK;
+  private readonly http = inject(HttpClient);
+
+  // Static bank is always available immediately
+  private allQuestions: Question[] = [...QUESTION_BANK];
+
+  readonly generatedCount = signal(0);
+  readonly loadingGenerated = signal(true);
 
   readonly currentQuestions = signal<Question[]>([]);
   readonly currentIndex = signal(0);
@@ -21,7 +28,7 @@ export class QuizService {
 
   readonly progress = computed(() => {
     const total = this.currentQuestions().length;
-    return total > 0 ? ((this.currentIndex()) / total) * 100 : 0;
+    return total > 0 ? (this.currentIndex() / total) * 100 : 0;
   });
 
   readonly result = computed<QuizResult | null>(() => {
@@ -47,6 +54,26 @@ export class QuizService {
     };
   });
 
+  readonly totalAvailable = computed(() => QUESTION_BANK.length + this.generatedCount());
+
+  constructor() {
+    this.loadGeneratedQuestions();
+  }
+
+  private loadGeneratedQuestions(): void {
+    this.http.get<Question[]>('/assets/questions/all.json').subscribe({
+      next: (generated) => {
+        this.allQuestions = [...QUESTION_BANK, ...generated];
+        this.generatedCount.set(generated.length);
+        this.loadingGenerated.set(false);
+      },
+      error: () => {
+        // Generated bank not yet created — fall back to static bank silently
+        this.loadingGenerated.set(false);
+      },
+    });
+  }
+
   startQuiz(wordClass: WordClass | 'all', count: number = 10): void {
     let pool =
       wordClass === 'all'
@@ -59,8 +86,8 @@ export class QuizService {
       [pool[i], pool[j]] = [pool[j], pool[i]];
     }
 
-    // Shuffle options within each question (correctAnswer is matched by value, not position)
-    const shuffled = pool.slice(0, Math.min(count, pool.length)).map(q => {
+    // Shuffle options within each question
+    const shuffled = pool.slice(0, Math.min(count, pool.length)).map((q) => {
       const options = [...q.options];
       for (let i = options.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));

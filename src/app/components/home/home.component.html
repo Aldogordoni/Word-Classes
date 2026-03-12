@@ -5,6 +5,13 @@
     <p class="description">
       Choose a word class to practise, or try them all mixed together!
     </p>
+    <p class="question-count">
+      @if (loadingGenerated) {
+        <span class="count-loading">Loading question bank…</span>
+      } @else {
+        <span class="count-ready">{{ totalAvailable | number }} questions available</span>
+      }
+    </p>
     <button class="learn-btn" (click)="goLearn()">📖 Learn Word Classes First</button>
   </header>
 
