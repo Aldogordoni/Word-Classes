@@ -1,0 +1,97 @@
+.home-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: #2d3436;
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #6c5ce7;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  color: #636e72;
+  font-size: 1.05rem;
+}
+
+.settings-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.settings-bar label {
+  font-weight: 600;
+  color: #2d3436;
+}
+
+.settings-bar select {
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  border: 2px solid #dfe6e9;
+  font-size: 1rem;
+  background: white;
+  cursor: pointer;
+}
+
+.word-class-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.word-class-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.5rem 1rem;
+  border: 3px solid;
+  border-radius: 16px;
+  background: white;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  font-family: inherit;
+}
+
+.word-class-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.word-class-card:active {
+  transform: translateY(0);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+}
+
+.card-label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--card-colour, #2d3436);
+}
+
+.card-desc {
+  font-size: 0.82rem;
+  color: #636e72;
+  text-align: center;
+  line-height: 1.4;
+}
