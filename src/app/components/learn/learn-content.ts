@@ -24,7 +24,8 @@ export const LEARN_CONTENT: WordClassContent[] = [
     icon: '📦',
     colour: '#e74c3c',
     definition: 'A noun is a word that names a person, place, thing, or idea.',
-    keyFact: 'Ask yourself: "Can I put 'the' or 'a' in front of it?" If yes, it is probably a noun.',
+    keyFact:
+      "Ask yourself: \"Can I put 'the' or 'a' in front of it?\" If yes, it is probably a noun.",
     types: [
       {
         name: 'Common nouns',
@@ -50,23 +51,34 @@ export const LEARN_CONTENT: WordClassContent[] = [
     sentenceExamples: [
       { sentence: 'The dog chased the cat.', word: 'dog / cat', note: 'Common nouns' },
       { sentence: 'She was born in London.', word: 'London', note: 'Proper noun' },
-      { sentence: 'Her courage inspired the team.', word: 'courage / team', note: 'Abstract + collective' },
-      { sentence: 'She went for a run before breakfast.', word: 'run', note: '"Run" is a noun here (after "a"), not a verb!' },
+      {
+        sentence: 'Her courage inspired the team.',
+        word: 'courage / team',
+        note: 'Abstract + collective',
+      },
+      {
+        sentence: 'She went for a run before breakfast.',
+        word: 'run',
+        note: '"Run" is a noun here (after "a"), not a verb!',
+      },
     ],
     watchOut: [
       'The same word can be a noun in one sentence and a verb in another. "I need a drink" (noun) vs "I drink water" (verb).',
       'Gerunds look like verbs (-ing) but act as nouns: "Swimming is fun."',
       '"The poor", "the elderly" — adjectives can be used as nouns.',
     ],
-    satsTip: 'In SATs, nouns are often tested as part of expanded noun phrases. Remember: abstract nouns name ideas and feelings, not physical objects.',
+    satsTip:
+      'In SATs, nouns are often tested as part of expanded noun phrases. Remember: abstract nouns name ideas and feelings, not physical objects.',
   },
   {
     id: 'verb',
     label: 'Verb',
     icon: '🏃',
     colour: '#3498db',
-    definition: 'A verb is a word that describes an action, state, or occurrence. Every sentence must have at least one verb.',
-    keyFact: 'Ask yourself: "Can this word change tense?" (walk → walked, is → was). If yes, it is a verb.',
+    definition:
+      'A verb is a word that describes an action, state, or occurrence. Every sentence must have at least one verb.',
+    keyFact:
+      'Ask yourself: "Can this word change tense?" (walk → walked, is → was). If yes, it is a verb.',
     types: [
       {
         name: 'Action verbs',
@@ -81,12 +93,36 @@ export const LEARN_CONTENT: WordClassContent[] = [
       {
         name: 'Auxiliary verbs',
         description: 'Helping verbs that work with a main verb to form tenses or voice.',
-        examples: ['have', 'has', 'had', 'do', 'does', 'did', 'be', 'am', 'is', 'are', 'was', 'were'],
+        examples: [
+          'have',
+          'has',
+          'had',
+          'do',
+          'does',
+          'did',
+          'be',
+          'am',
+          'is',
+          'are',
+          'was',
+          'were',
+        ],
       },
       {
         name: 'Modal verbs',
         description: 'Show possibility, ability, permission or obligation. They never change form.',
-        examples: ['can', 'could', 'will', 'would', 'shall', 'should', 'may', 'might', 'must', 'ought to'],
+        examples: [
+          'can',
+          'could',
+          'will',
+          'would',
+          'shall',
+          'should',
+          'may',
+          'might',
+          'must',
+          'ought to',
+        ],
       },
     ],
     sentenceExamples: [
@@ -94,14 +130,19 @@ export const LEARN_CONTENT: WordClassContent[] = [
       { sentence: 'The flowers are blooming.', word: 'are', note: 'Auxiliary verb' },
       { sentence: 'You should finish your homework.', word: 'should', note: 'Modal verb' },
       { sentence: 'She seems very happy.', word: 'seems', note: 'Linking verb' },
-      { sentence: 'The report was written by the teacher.', word: 'was written', note: 'Passive verb (auxiliary + past participle)' },
+      {
+        sentence: 'The report was written by the teacher.',
+        word: 'was written',
+        note: 'Passive verb (auxiliary + past participle)',
+      },
     ],
     watchOut: [
       '"Have" can be a main verb ("I have a dog") or an auxiliary verb ("I have finished").',
       'Modal verbs are always followed by the base form of a verb: "She must go" (not "must goes").',
       '"Run" and "light" can also be nouns — check how the word is being used in the sentence.',
     ],
-    satsTip: 'SATs often ask about modal verbs and passive voice. Remember: modal verbs never add -s in the third person. "She can" NOT "she cans".',
+    satsTip:
+      'SATs often ask about modal verbs and passive voice. Remember: modal verbs never add -s in the third person. "She can" NOT "she cans".',
   },
   {
     id: 'adjective',
@@ -129,21 +170,43 @@ export const LEARN_CONTENT: WordClassContent[] = [
       {
         name: 'Participial adjectives',
         description: 'Verb forms (-ing or -ed) used as adjectives.',
-        examples: ['a broken window', 'an exhausted runner', 'a sparkling river', 'a sleeping child'],
+        examples: [
+          'a broken window',
+          'an exhausted runner',
+          'a sparkling river',
+          'a sleeping child',
+        ],
       },
     ],
     sentenceExamples: [
-      { sentence: 'The enormous elephant walked slowly.', word: 'enormous', note: 'Attributive — before the noun' },
-      { sentence: 'The water was freezing cold.', word: 'freezing', note: 'Predicative — after a linking verb' },
-      { sentence: 'The broken window let in the cold air.', word: 'broken', note: 'Participial adjective (-ed form)' },
-      { sentence: 'He walked at a fast pace.', word: 'fast', note: 'Describes "pace" (a noun), so it is an adjective here' },
+      {
+        sentence: 'The enormous elephant walked slowly.',
+        word: 'enormous',
+        note: 'Attributive — before the noun',
+      },
+      {
+        sentence: 'The water was freezing cold.',
+        word: 'freezing',
+        note: 'Predicative — after a linking verb',
+      },
+      {
+        sentence: 'The broken window let in the cold air.',
+        word: 'broken',
+        note: 'Participial adjective (-ed form)',
+      },
+      {
+        sentence: 'He walked at a fast pace.',
+        word: 'fast',
+        note: 'Describes "pace" (a noun), so it is an adjective here',
+      },
     ],
     watchOut: [
       '"Fast" can be an adjective ("a fast car") or an adverb ("she runs fast"). Check what it is modifying.',
       '"Freezing", "sparkling", "sleeping" look like verbs (-ing) but are used as adjectives.',
       '"Open", "content", "present" are adjectives when they describe a noun or follow a linking verb.',
     ],
-    satsTip: 'In SATs, expanded noun phrases with adjectives are important: "the ancient, crumbling castle". Remember that adjectives can come before or after the noun.',
+    satsTip:
+      'In SATs, expanded noun phrases with adjectives are important: "the ancient, crumbling castle". Remember that adjectives can come before or after the noun.',
   },
   {
     id: 'adverb',
@@ -151,7 +214,8 @@ export const LEARN_CONTENT: WordClassContent[] = [
     icon: '⚡',
     colour: '#9b59b6',
     definition: 'An adverb modifies (adds detail to) a verb, an adjective, or another adverb.',
-    keyFact: 'Ask yourself: "Does this word tell us how, when, where, how often, or to what degree?" If yes, it is an adverb.',
+    keyFact:
+      'Ask yourself: "Does this word tell us how, when, where, how often, or to what degree?" If yes, it is an adverb.',
     types: [
       {
         name: 'Manner (how)',
@@ -185,18 +249,35 @@ export const LEARN_CONTENT: WordClassContent[] = [
       },
     ],
     sentenceExamples: [
-      { sentence: 'The tortoise moved slowly.', word: 'slowly', note: 'Manner — modifies the verb "moved"' },
-      { sentence: 'The weather was extremely cold.', word: 'extremely', note: 'Degree — modifies the adjective "cold"' },
-      { sentence: 'She almost missed the bus.', word: 'almost', note: 'Degree — modifies the verb "missed"' },
+      {
+        sentence: 'The tortoise moved slowly.',
+        word: 'slowly',
+        note: 'Manner — modifies the verb "moved"',
+      },
+      {
+        sentence: 'The weather was extremely cold.',
+        word: 'extremely',
+        note: 'Degree — modifies the adjective "cold"',
+      },
+      {
+        sentence: 'She almost missed the bus.',
+        word: 'almost',
+        note: 'Degree — modifies the verb "missed"',
+      },
       { sentence: 'He could not believe it.', word: 'not', note: '"Not" is always an adverb' },
-      { sentence: 'Frankly, I think the plan needs work.', word: 'Frankly', note: 'Sentence adverb — modifies the whole statement' },
+      {
+        sentence: 'Frankly, I think the plan needs work.',
+        word: 'Frankly',
+        note: 'Sentence adverb — modifies the whole statement',
+      },
     ],
     watchOut: [
       '"Not" is always an adverb — it negates the verb.',
       '"Fast", "hard", "well", "early", "late" can be adjectives OR adverbs: check what they modify.',
       '"Enough" after an adjective is an adverb ("good enough"), but before a noun it is a determiner ("enough cake").',
     ],
-    satsTip: 'SATs often test adverbs of degree (very, quite, extremely) and sentence adverbs. These are easy to confuse with adjectives — remember that adverbs modify verbs, adjectives, or other adverbs, NOT nouns.',
+    satsTip:
+      'SATs often test adverbs of degree (very, quite, extremely) and sentence adverbs. These are easy to confuse with adjectives — remember that adverbs modify verbs, adjectives, or other adverbs, NOT nouns.',
   },
   {
     id: 'pronoun',
@@ -208,12 +289,14 @@ export const LEARN_CONTENT: WordClassContent[] = [
     types: [
       {
         name: 'Personal pronouns',
-        description: 'Refer to people or things. Change form depending on their role (subject/object).',
+        description:
+          'Refer to people or things. Change form depending on their role (subject/object).',
         examples: ['I / me', 'you', 'he / him', 'she / her', 'it', 'we / us', 'they / them'],
       },
       {
         name: 'Possessive pronouns',
-        description: 'Show ownership and stand ALONE (no noun follows them). Do not confuse with possessive determiners!',
+        description:
+          'Show ownership and stand ALONE (no noun follows them). Do not confuse with possessive determiners!',
         examples: ['mine', 'yours', 'his', 'hers', 'ours', 'theirs'],
       },
       {
@@ -224,7 +307,17 @@ export const LEARN_CONTENT: WordClassContent[] = [
       {
         name: 'Indefinite pronouns',
         description: 'Refer to people or things in a non-specific way.',
-        examples: ['someone', 'nobody', 'everyone', 'everything', 'anything', 'none', 'each', 'both', 'one'],
+        examples: [
+          'someone',
+          'nobody',
+          'everyone',
+          'everything',
+          'anything',
+          'none',
+          'each',
+          'both',
+          'one',
+        ],
       },
       {
         name: 'Relative pronouns',
@@ -235,8 +328,16 @@ export const LEARN_CONTENT: WordClassContent[] = [
     sentenceExamples: [
       { sentence: 'She went to the shop.', word: 'She', note: 'Personal pronoun (subject)' },
       { sentence: 'The prize is mine.', word: 'mine', note: 'Possessive pronoun — stands alone' },
-      { sentence: 'Compare: "My prize" — here "my" is a possessive DETERMINER (before a noun).', word: 'my', note: 'NOT a pronoun — it precedes a noun' },
-      { sentence: 'The children entertained themselves.', word: 'themselves', note: 'Reflexive pronoun' },
+      {
+        sentence: 'Compare: "My prize" — here "my" is a possessive DETERMINER (before a noun).',
+        word: 'my',
+        note: 'NOT a pronoun — it precedes a noun',
+      },
+      {
+        sentence: 'The children entertained themselves.',
+        word: 'themselves',
+        note: 'Reflexive pronoun',
+      },
       { sentence: 'This is the house that Jack built.', word: 'that', note: 'Relative pronoun' },
     ],
     watchOut: [
@@ -245,20 +346,34 @@ export const LEARN_CONTENT: WordClassContent[] = [
       '"Both", "each", "none" can be pronouns (stand alone) or determiners (before a noun).',
       '"This/that/these/those" are pronouns when they stand alone, but determiners when before a noun.',
     ],
-    satsTip: 'The possessive pronoun vs possessive determiner distinction is a common SATs question. Key rule: if the word stands alone without a noun following, it is a pronoun. If it is followed by a noun, it is a determiner.',
+    satsTip:
+      'The possessive pronoun vs possessive determiner distinction is a common SATs question. Key rule: if the word stands alone without a noun following, it is a pronoun. If it is followed by a noun, it is a determiner.',
   },
   {
     id: 'preposition',
     label: 'Preposition',
     icon: '📍',
     colour: '#1abc9c',
-    definition: 'A preposition shows the relationship between a noun or pronoun and another word in the sentence. It usually relates to place, direction, or time.',
-    keyFact: 'Prepositions are always followed by a noun or noun phrase (called the object of the preposition).',
+    definition:
+      'A preposition shows the relationship between a noun or pronoun and another word in the sentence. It usually relates to place, direction, or time.',
+    keyFact:
+      'Prepositions are always followed by a noun or noun phrase (called the object of the preposition).',
     types: [
       {
         name: 'Place',
         description: 'Show where something is.',
-        examples: ['on', 'in', 'under', 'over', 'beside', 'between', 'above', 'below', 'inside', 'outside'],
+        examples: [
+          'on',
+          'in',
+          'under',
+          'over',
+          'beside',
+          'between',
+          'above',
+          'below',
+          'inside',
+          'outside',
+        ],
       },
       {
         name: 'Direction',
@@ -273,21 +388,37 @@ export const LEARN_CONTENT: WordClassContent[] = [
       {
         name: 'Complex prepositions',
         description: 'Multi-word prepositions that work as a single unit.',
-        examples: ['in spite of', 'because of', 'on behalf of', 'apart from', 'due to', 'as well as'],
+        examples: [
+          'in spite of',
+          'because of',
+          'on behalf of',
+          'apart from',
+          'due to',
+          'as well as',
+        ],
       },
     ],
     sentenceExamples: [
       { sentence: 'The cat hid under the table.', word: 'under', note: 'Place preposition' },
       { sentence: 'We drove across the bridge.', word: 'across', note: 'Direction preposition' },
-      { sentence: 'She arrived before everyone else.', word: 'before', note: '"before" + noun phrase = preposition' },
-      { sentence: 'Following the storm, the streets were flooded.', word: 'Following', note: 'Participial preposition' },
+      {
+        sentence: 'She arrived before everyone else.',
+        word: 'before',
+        note: '"before" + noun phrase = preposition',
+      },
+      {
+        sentence: 'Following the storm, the streets were flooded.',
+        word: 'Following',
+        note: 'Participial preposition',
+      },
     ],
     watchOut: [
       'Words like "before", "after", "since", "until", "as" can be PREPOSITIONS (+ noun phrase) or CONJUNCTIONS (+ clause). "She arrived before noon" (preposition) vs "She arrived before the lesson ended" (conjunction).',
       '"Like" is a preposition in "She swims like a fish", but a verb in "I like fish".',
       '"Past" can be a preposition ("walked past the shop"), an adjective ("in past times"), or a noun ("in the past").',
     ],
-    satsTip: 'In SATs, prepositions are often tested in the context of prepositional phrases. Remember: the preposition is always followed by a noun phrase, never a clause. If it is followed by a clause (with a verb), it is a conjunction.',
+    satsTip:
+      'In SATs, prepositions are often tested in the context of prepositional phrases. Remember: the preposition is always followed by a noun phrase, never a clause. If it is followed by a clause (with a verb), it is a conjunction.',
   },
   {
     id: 'conjunction',
@@ -295,49 +426,95 @@ export const LEARN_CONTENT: WordClassContent[] = [
     icon: '🔗',
     colour: '#f39c12',
     definition: 'A conjunction joins words, phrases, or clauses together.',
-    keyFact: 'There are two main types: coordinating (join equal parts) and subordinating (join a main clause to a subordinate clause).',
+    keyFact:
+      'There are two main types: coordinating (join equal parts) and subordinating (join a main clause to a subordinate clause).',
     types: [
       {
         name: 'Coordinating conjunctions',
-        description: 'Join two equal words, phrases, or main clauses. Remember: FANBOYS (For, And, Nor, But, Or, Yet, So).',
+        description:
+          'Join two equal words, phrases, or main clauses. Remember: FANBOYS (For, And, Nor, But, Or, Yet, So).',
         examples: ['for', 'and', 'nor', 'but', 'or', 'yet', 'so'],
       },
       {
         name: 'Subordinating conjunctions',
         description: 'Introduce a subordinate clause and show how it relates to the main clause.',
-        examples: ['because', 'although', 'while', 'when', 'if', 'unless', 'until', 'since', 'as', 'whereas', 'whether', 'provided that', 'so that'],
+        examples: [
+          'because',
+          'although',
+          'while',
+          'when',
+          'if',
+          'unless',
+          'until',
+          'since',
+          'as',
+          'whereas',
+          'whether',
+          'provided that',
+          'so that',
+        ],
       },
       {
         name: 'Correlative conjunctions',
         description: 'Come in pairs to link balanced parts of a sentence.',
-        examples: ['either...or', 'neither...nor', 'both...and', 'not only...but also', 'whether...or'],
+        examples: [
+          'either...or',
+          'neither...nor',
+          'both...and',
+          'not only...but also',
+          'whether...or',
+        ],
       },
     ],
     sentenceExamples: [
-      { sentence: 'I like apples and oranges.', word: 'and', note: 'Coordinating — joins two nouns' },
-      { sentence: 'She was tired because she had been running.', word: 'because', note: 'Subordinating — introduces reason' },
-      { sentence: 'He wanted to go out, but it was raining.', word: 'but', note: 'Coordinating — shows contrast' },
-      { sentence: 'You can\'t go out unless you tidy your room.', word: 'unless', note: 'Subordinating — shows condition' },
-      { sentence: 'Neither the cake nor the biscuits were left.', word: 'Neither...nor', note: 'Correlative conjunction pair' },
+      {
+        sentence: 'I like apples and oranges.',
+        word: 'and',
+        note: 'Coordinating — joins two nouns',
+      },
+      {
+        sentence: 'She was tired because she had been running.',
+        word: 'because',
+        note: 'Subordinating — introduces reason',
+      },
+      {
+        sentence: 'He wanted to go out, but it was raining.',
+        word: 'but',
+        note: 'Coordinating — shows contrast',
+      },
+      {
+        sentence: "You can't go out unless you tidy your room.",
+        word: 'unless',
+        note: 'Subordinating — shows condition',
+      },
+      {
+        sentence: 'Neither the cake nor the biscuits were left.',
+        word: 'Neither...nor',
+        note: 'Correlative conjunction pair',
+      },
     ],
     watchOut: [
       '"Before", "after", "since", "until" are conjunctions when followed by a clause, but prepositions when followed by a noun phrase.',
       '"Yet" is a coordinating conjunction meaning "but" ("she tried, yet she failed") — different from the adverb "yet" ("has she finished yet?").',
       '"For" is a coordinating conjunction in formal writing meaning "because" ("He smiled, for he was happy").',
     ],
-    satsTip: 'SATs often test subordinating conjunctions for complex sentences. Using a variety of conjunctions (not just "and" or "because") improves your writing marks.',
+    satsTip:
+      'SATs often test subordinating conjunctions for complex sentences. Using a variety of conjunctions (not just "and" or "because") improves your writing marks.',
   },
   {
     id: 'determiner',
     label: 'Determiner',
     icon: '🔢',
     colour: '#e84393',
-    definition: 'A determiner is a word that introduces a noun and gives information about which one, how many, or whose it is. Determiners always come before a noun.',
-    keyFact: 'Determiners always come before a noun (or before adjectives that precede a noun). If the word stands alone, it is probably a pronoun instead.',
+    definition:
+      'A determiner is a word that introduces a noun and gives information about which one, how many, or whose it is. Determiners always come before a noun.',
+    keyFact:
+      'Determiners always come before a noun (or before adjectives that precede a noun). If the word stands alone, it is probably a pronoun instead.',
     types: [
       {
         name: 'Articles',
-        description: '"The" (definite — a specific thing) and "a/an" (indefinite — any one of something).',
+        description:
+          '"The" (definite — a specific thing) and "a/an" (indefinite — any one of something).',
         examples: ['the', 'a', 'an'],
       },
       {
@@ -347,17 +524,34 @@ export const LEARN_CONTENT: WordClassContent[] = [
       },
       {
         name: 'Possessive determiners',
-        description: 'Show who something belongs to. Come before a noun (unlike possessive pronouns which stand alone).',
+        description:
+          'Show who something belongs to. Come before a noun (unlike possessive pronouns which stand alone).',
         examples: ['my', 'your', 'his', 'her', 'its', 'our', 'their'],
       },
       {
         name: 'Quantifiers',
         description: 'Say how many or how much.',
-        examples: ['some', 'any', 'many', 'much', 'few', 'little', 'several', 'enough', 'no', 'every', 'each', 'both', 'either', 'neither'],
+        examples: [
+          'some',
+          'any',
+          'many',
+          'much',
+          'few',
+          'little',
+          'several',
+          'enough',
+          'no',
+          'every',
+          'each',
+          'both',
+          'either',
+          'neither',
+        ],
       },
       {
         name: 'Numbers',
-        description: 'Cardinal (one, two…) and ordinal (first, second…) numbers used before a noun.',
+        description:
+          'Cardinal (one, two…) and ordinal (first, second…) numbers used before a noun.',
         examples: ['one dog', 'three biscuits', 'first prize', 'second chance'],
       },
       {
@@ -368,10 +562,26 @@ export const LEARN_CONTENT: WordClassContent[] = [
     ],
     sentenceExamples: [
       { sentence: 'The children played in the park.', word: 'The', note: 'Definite article' },
-      { sentence: 'My dog loves chasing squirrels.', word: 'My', note: 'Possessive determiner — before "dog"' },
-      { sentence: 'Compare: "The prize is mine" — "mine" stands alone, so it is a pronoun.', word: 'mine', note: 'Possessive PRONOUN — no noun follows' },
-      { sentence: 'Every student must complete the task.', word: 'Every', note: 'Quantifier determiner' },
-      { sentence: 'Whose umbrella is this?', word: 'Whose', note: 'Interrogative determiner — before "umbrella"' },
+      {
+        sentence: 'My dog loves chasing squirrels.',
+        word: 'My',
+        note: 'Possessive determiner — before "dog"',
+      },
+      {
+        sentence: 'Compare: "The prize is mine" — "mine" stands alone, so it is a pronoun.',
+        word: 'mine',
+        note: 'Possessive PRONOUN — no noun follows',
+      },
+      {
+        sentence: 'Every student must complete the task.',
+        word: 'Every',
+        note: 'Quantifier determiner',
+      },
+      {
+        sentence: 'Whose umbrella is this?',
+        word: 'Whose',
+        note: 'Interrogative determiner — before "umbrella"',
+      },
     ],
     watchOut: [
       'Possessive DETERMINERS (my, your, her…) come before a noun. Possessive PRONOUNS (mine, yours, hers…) stand alone.',
@@ -379,6 +589,7 @@ export const LEARN_CONTENT: WordClassContent[] = [
       '"This/that/these/those" are determiners when before a noun ("this book"), pronouns when they stand alone ("this is fun").',
       '"Which" and "what" are interrogative determiners before a noun ("which car?") but interrogative pronouns when alone ("which do you want?").',
     ],
-    satsTip: 'Determiners are commonly tested in SATs. The key question is always: does the word come before a noun? If yes → determiner. If it stands alone → pronoun or adverb.',
+    satsTip:
+      'Determiners are commonly tested in SATs. The key question is always: does the word come before a noun? If yes → determiner. If it stands alone → pronoun or adverb.',
   },
 ];
