@@ -1,12 +1,12 @@
 .home-container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 3rem;
 }
 
 .hero {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .hero h1 {
@@ -17,57 +17,61 @@
 
 .subtitle {
   font-size: 1.2rem;
-  color: #6c5ce7;
+  color: #636e72;
   font-weight: 600;
-  margin-bottom: 0.5rem;
 }
 
-.description {
-  color: #636e72;
-  font-size: 1.05rem;
+/* ── Subject sections ─────────────────────────────── */
+
+.subject-section {
   margin-bottom: 1rem;
 }
 
+.subject-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.subject-icon {
+  font-size: 2.2rem;
+  flex-shrink: 0;
+}
+
+.subject-title {
+  font-size: 1.4rem;
+  color: #2d3436;
+  margin: 0 0 0.2rem;
+}
+
+.subject-desc {
+  color: #636e72;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.divider {
+  border: none;
+  border-top: 2px solid #f0f0f0;
+  margin: 2rem 0;
+}
+
+/* ── Question count & settings ────────────────────── */
+
 .question-count {
-  margin-top: 0.6rem;
   font-size: 0.9rem;
+  margin-bottom: 0.75rem;
 }
 
-.count-loading {
-  color: #b2bec3;
-  font-style: italic;
-}
-
-.count-ready {
-  color: #00b894;
-  font-weight: 700;
-}
-
-.learn-btn {
-  margin-top: 0.25rem;
-  padding: 0.65rem 1.5rem;
-  border: 2px solid #6c5ce7;
-  border-radius: 12px;
-  background: white;
-  color: #6c5ce7;
-  font-size: 1rem;
-  font-weight: 700;
-  cursor: pointer;
-  font-family: inherit;
-  transition: background 0.15s, transform 0.12s;
-}
-
-.learn-btn:hover {
-  background: #f8f7ff;
-  transform: translateY(-2px);
-}
+.count-loading { color: #b2bec3; font-style: italic; }
+.count-ready   { color: #00b894; font-weight: 700; }
 
 .settings-bar {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 0.75rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
   font-size: 1rem;
 }
 
@@ -85,41 +89,50 @@
   cursor: pointer;
 }
 
-.word-class-grid {
+/* ── Card grid ────────────────────────────────────── */
+
+.card-row {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1rem;
 }
 
-.word-class-card {
+.subject-card,
+.learn-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  padding: 1.5rem 1rem;
+  padding: 1.4rem 1rem;
   border: 3px solid;
   border-radius: 16px;
   background: white;
   cursor: pointer;
   transition: transform 0.15s, box-shadow 0.15s;
   font-family: inherit;
+  text-align: center;
 }
 
-.word-class-card:hover {
+.subject-card:hover,
+.learn-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
-.word-class-card:active {
+.subject-card:active,
+.learn-card:active {
   transform: translateY(0);
 }
 
-.card-icon {
-  font-size: 2.5rem;
+.learn-card {
+  border-color: #b2bec3;
+  --card-colour: #636e72;
 }
 
+.card-icon  { font-size: 2.2rem; }
+
 .card-label {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--card-colour, #2d3436);
 }
@@ -127,6 +140,5 @@
 .card-desc {
   font-size: 0.82rem;
   color: #636e72;
-  text-align: center;
   line-height: 1.4;
 }

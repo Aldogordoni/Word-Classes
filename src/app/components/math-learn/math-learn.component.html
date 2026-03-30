@@ -1,0 +1,117 @@
+<div class="learn-container">
+
+  <!-- Top bar -->
+  <div class="top-bar">
+    <button class="home-btn" (click)="goHome()">← Home</button>
+    <h1>Learn Maths Formulas</h1>
+    <button class="quiz-btn" (click)="startQuiz()">Take a Quiz</button>
+  </div>
+
+  <!-- Tab bar -->
+  <nav class="tab-bar">
+    @for (c of content; track c.id) {
+      <button
+        class="tab"
+        [class.active]="activeId === c.id"
+        [style.--tab-colour]="c.colour"
+        (click)="select(c.id)"
+      >
+        <span class="tab-icon">{{ c.icon }}</span>
+        <span class="tab-label">{{ c.label }}</span>
+      </button>
+    }
+  </nav>
+
+  <!-- Content panel -->
+  <div class="panel">
+
+    <!-- Header -->
+    <div class="panel-header" [style.background]="active.colour">
+      <span class="panel-icon">{{ active.icon }}</span>
+      <div>
+        <h2>{{ active.label }}</h2>
+        <p class="definition">{{ active.definition }}</p>
+      </div>
+    </div>
+
+    <!-- Key fact -->
+    <div class="key-fact">
+      <span class="key-fact-icon">💡</span>
+      <p>{{ active.keyFact }}</p>
+    </div>
+
+    <!-- Formulas -->
+    <section class="section">
+      <h3>Formulas</h3>
+      <div class="formula-grid">
+        @for (f of active.formulas; track f.shape) {
+          <div class="formula-card" [style.border-left-color]="active.colour">
+            <h4>{{ f.shape }}</h4>
+            <div class="formula-box" [style.background]="active.colour + '15'" [style.color]="active.colour">
+              {{ f.formula }}
+            </div>
+            @if (f.formulaNote) {
+              <p class="formula-note">{{ f.formulaNote }}</p>
+            }
+            <p class="formula-example"><strong>Example:</strong> {{ f.example }}</p>
+          </div>
+        }
+      </div>
+    </section>
+
+    <!-- Worked examples -->
+    <section class="section">
+      <h3>Worked examples</h3>
+      <div class="worked-list">
+        @for (ex of active.workedExamples; track ex.question) {
+          <div class="worked-card">
+            <p class="worked-question">{{ ex.question }}</p>
+            <ol class="worked-steps">
+              @for (step of ex.steps; track step) {
+                <li>{{ step }}</li>
+              }
+            </ol>
+            <div class="worked-answer" [style.background]="active.colour + '18'" [style.border-color]="active.colour">
+              Answer: <strong>{{ ex.answer }}</strong>
+            </div>
+          </div>
+        }
+      </div>
+    </section>
+
+    <!-- Watch out -->
+    <section class="section watch-out-section">
+      <h3>⚠️ Watch out for…</h3>
+      <ul class="watch-list">
+        @for (w of active.watchOut; track w) {
+          <li>{{ w }}</li>
+        }
+      </ul>
+    </section>
+
+    <!-- SATs tip -->
+    <div class="sats-tip">
+      <span class="sats-tip-icon">🎯</span>
+      <div>
+        <strong>SATs Tip</strong>
+        <p>{{ active.satsTip }}</p>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="panel-nav">
+      @if (content.indexOf(active) > 0) {
+        <button class="nav-btn" (click)="select(content[content.indexOf(active) - 1].id)">
+          ← {{ content[content.indexOf(active) - 1].label }}
+        </button>
+      }
+      <div class="spacer"></div>
+      @if (content.indexOf(active) < content.length - 1) {
+        <button class="nav-btn" (click)="select(content[content.indexOf(active) + 1].id)">
+          {{ content[content.indexOf(active) + 1].label }} →
+        </button>
+      }
+    </div>
+
+  </div>
+</div>

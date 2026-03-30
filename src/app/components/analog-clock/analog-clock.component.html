@@ -1,0 +1,58 @@
+<svg class="clock-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Face -->
+  <circle cx="100" cy="100" r="90" fill="white" stroke="#2d3436" stroke-width="3"/>
+
+  <!-- Tick marks -->
+  @for (tick of ticks; track tick.x1) {
+    <line
+      [attr.x1]="tick.x1" [attr.y1]="tick.y1"
+      [attr.x2]="tick.x2" [attr.y2]="tick.y2"
+      [attr.stroke-width]="tick.major ? 3 : 1"
+      stroke="#2d3436"
+    />
+  }
+
+  <!-- Numbers -->
+  @for (num of clockNumbers; track num.label) {
+    <text
+      [attr.x]="num.x" [attr.y]="num.y"
+      text-anchor="middle" dominant-baseline="central"
+      font-size="15" font-weight="bold" fill="#2d3436" font-family="Nunito, sans-serif"
+    >{{ num.label }}</text>
+  }
+
+  <!-- Hour hand -->
+  <line
+    x1="100" y1="100"
+    [attr.x2]="hourHandX" [attr.y2]="hourHandY"
+    stroke="#2d3436" stroke-width="7" stroke-linecap="round"
+  />
+
+  <!-- Minute hand -->
+  @if (showMinutes) {
+    <line
+      x1="100" y1="100"
+      [attr.x2]="minuteHandX" [attr.y2]="minuteHandY"
+      stroke="#636e72" stroke-width="4" stroke-linecap="round"
+    />
+  }
+
+  <!-- Second hand -->
+  @if (showSeconds) {
+    <line
+      x1="100" y1="100"
+      [attr.x2]="secondHandX" [attr.y2]="secondHandY"
+      stroke="#e17055" stroke-width="2" stroke-linecap="round"
+    />
+    <!-- Second hand tail -->
+    <line
+      x1="100" y1="100"
+      [attr.x2]="100 - (secondHandX - 100) * 0.2"
+      [attr.y2]="100 - (secondHandY - 100) * 0.2"
+      stroke="#e17055" stroke-width="2" stroke-linecap="round"
+    />
+  }
+
+  <!-- Centre cap -->
+  <circle cx="100" cy="100" r="6" fill="#2d3436"/>
+</svg>

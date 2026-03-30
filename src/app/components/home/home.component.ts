@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { QuizService } from '../../services/quiz.service';
+import { MathQuizService } from '../../services/math-quiz.service';
 import { WORD_CLASS_INFO, WordClass } from '../../models/question.model';
+import { MATH_TOPIC_INFO, MathTopic } from '../../models/math-question.model';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -18,15 +20,26 @@ export class HomeComponent {
   questionCount = 10;
   wordClasses: (WordClass | 'all')[];
 
+  mathQuestionCount = 10;
+  mathTopics: (MathTopic | 'all')[];
+
   constructor(
-    private quizService: QuizService,
-    private router: Router,
+    private readonly quizService: QuizService,
+    private readonly mathQuizService: MathQuizService,
+    private readonly router: Router,
   ) {
     this.wordClasses = this.quizService.getAvailableWordClasses();
+    this.mathTopics = this.mathQuizService.getAvailableTopics();
   }
 
-  get loadingGenerated() { return this.quizService.loadingGenerated(); }
-  get totalAvailable() { return this.quizService.totalAvailable(); }
+  // ── Word Classes ──────────────────────────────────────────────────────────
+
+  get loadingGenerated() {
+    return this.quizService.loadingGenerated();
+  }
+  get totalAvailable() {
+    return this.quizService.totalAvailable();
+  }
 
   getLabel(wc: WordClass | 'all'): string {
     return wc === 'all' ? 'All Word Classes' : WORD_CLASS_INFO[wc].label;
@@ -42,17 +55,48 @@ export class HomeComponent {
       : WORD_CLASS_INFO[wc].description;
   }
 
-  startQuiz(): void {
-    this.quizService.startQuiz(this.selectedClass, this.questionCount);
-    this.router.navigate(['/quiz']);
-  }
-
   selectAndStart(wc: WordClass | 'all'): void {
     this.selectedClass = wc;
-    this.startQuiz();
+    this.quizService.startQuiz(wc, this.questionCount);
+    this.router.navigate(['/quiz']);
   }
 
   goLearn(): void {
     this.router.navigate(['/learn']);
+  }
+
+  // ── Maths ─────────────────────────────────────────────────────────────────
+
+  get mathTotalQuestions() {
+    return this.mathQuizService.totalQuestions;
+  }
+
+  getMathLabel(topic: MathTopic | 'all'): string {
+    return MATH_TOPIC_INFO[topic].label;
+  }
+
+  getMathColour(topic: MathTopic | 'all'): string {
+    return MATH_TOPIC_INFO[topic].colour;
+  }
+
+  getMathIcon(topic: MathTopic | 'all'): string {
+    return MATH_TOPIC_INFO[topic].icon;
+  }
+
+  getMathDescription(topic: MathTopic | 'all'): string {
+    return MATH_TOPIC_INFO[topic].description;
+  }
+
+  startMathQuiz(topic: MathTopic | 'all'): void {
+    this.mathQuizService.startQuiz(topic, this.mathQuestionCount);
+    this.router.navigate(['/math-quiz']);
+  }
+
+  goMathLearn(): void {
+    this.router.navigate(['/math-learn']);
+  }
+
+  goTime(): void {
+    this.router.navigate(['/time']);
   }
 }

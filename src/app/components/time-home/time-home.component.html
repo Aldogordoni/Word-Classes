@@ -1,0 +1,111 @@
+<div class="time-home-container">
+
+  <div class="top-bar">
+    <button class="back-btn" (click)="goHome()">← Home</button>
+    <h1>Time Practice</h1>
+    <div></div>
+  </div>
+
+  <div class="config-card">
+
+    <!-- What to practise -->
+    <section class="config-section">
+      <h2 class="section-title">What would you like to practise?</h2>
+      <div class="option-row">
+        <button
+          class="option-btn"
+          [class.selected]="selectedContent === 'clock'"
+          (click)="selectedContent = 'clock'"
+        >
+          <span class="opt-icon">🕐</span>
+          <span class="opt-label">Tell the Time</span>
+          <span class="opt-desc">Read an analog clock and choose the correct time.</span>
+        </button>
+        <button
+          class="option-btn"
+          [class.selected]="selectedContent === 'problems'"
+          (click)="selectedContent = 'problems'"
+        >
+          <span class="opt-icon">📝</span>
+          <span class="opt-label">Time Problems</span>
+          <span class="opt-desc">SAT-style word problems: durations, start & end times.</span>
+        </button>
+        <button
+          class="option-btn"
+          [class.selected]="selectedContent === 'both'"
+          (click)="selectedContent = 'both'"
+        >
+          <span class="opt-icon">🔀</span>
+          <span class="opt-label">Both Mixed</span>
+          <span class="opt-desc">Clock reading and time problems together.</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Clock precision (only when clock questions included) -->
+    @if (showModeSelector) {
+      <section class="config-section">
+        <h2 class="section-title">Clock precision</h2>
+        <div class="radio-group">
+          <label class="radio-label" [class.active]="selectedMode === 'hours'">
+            <input type="radio" name="mode" value="hours" [(ngModel)]="selectedMode" />
+            <span class="radio-content">
+              <strong>Hours only</strong>
+              <span class="radio-hint">e.g. 3 o'clock</span>
+            </span>
+          </label>
+          <label class="radio-label" [class.active]="selectedMode === 'hours-minutes'">
+            <input type="radio" name="mode" value="hours-minutes" [(ngModel)]="selectedMode" />
+            <span class="radio-content">
+              <strong>Hours &amp; minutes</strong>
+              <span class="radio-hint">e.g. 3:25</span>
+            </span>
+          </label>
+          <label class="radio-label" [class.active]="selectedMode === 'hours-minutes-seconds'">
+            <input type="radio" name="mode" value="hours-minutes-seconds" [(ngModel)]="selectedMode" />
+            <span class="radio-content">
+              <strong>Hours, minutes &amp; seconds</strong>
+              <span class="radio-hint">e.g. 3:25:40</span>
+            </span>
+          </label>
+        </div>
+      </section>
+    }
+
+    <!-- Format -->
+    <section class="config-section">
+      <h2 class="section-title">Time format</h2>
+      <div class="radio-group">
+        <label class="radio-label" [class.active]="selectedFormat === '12hr'">
+          <input type="radio" name="format" value="12hr" [(ngModel)]="selectedFormat" />
+          <span class="radio-content">
+            <strong>12-hour (am/pm)</strong>
+            <span class="radio-hint">e.g. 3:25 pm</span>
+          </span>
+        </label>
+        <label class="radio-label" [class.active]="selectedFormat === '24hr'">
+          <input type="radio" name="format" value="24hr" [(ngModel)]="selectedFormat" />
+          <span class="radio-content">
+            <strong>24-hour</strong>
+            <span class="radio-hint">e.g. 15:25</span>
+          </span>
+        </label>
+      </div>
+    </section>
+
+    <!-- Question count + start -->
+    <section class="config-section bottom-section">
+      <div class="count-row">
+        <label for="q-count">Questions:</label>
+        <select id="q-count" [(ngModel)]="questionCount">
+          <option [value]="5">5</option>
+          <option [value]="10">10</option>
+          <option [value]="15">15</option>
+          <option [value]="20">20</option>
+        </select>
+      </div>
+      <button class="start-btn" (click)="startQuiz()">Start Quiz →</button>
+    </section>
+
+  </div>
+</div>

@@ -1,0 +1,50 @@
+@if (question) {
+  <div class="quiz-container">
+    <!-- Progress bar -->
+    <div class="progress-section">
+      <button class="back-btn" (click)="goHome()">← Home</button>
+      <div class="progress-text">Question {{ questionNumber }} of {{ totalQuestions }}</div>
+      <div class="progress-bar">
+        <div class="progress-fill" [style.width.%]="progress"></div>
+      </div>
+    </div>
+
+    <!-- Question card -->
+    <div class="question-card">
+      <div class="question-meta">
+        <span class="question-type">Maths Formulas</span>
+        <span class="difficulty-badge" [class]="getDifficultyClass()">{{ getDifficultyLabel() }}</span>
+      </div>
+      <p class="sentence">{{ question.question }}</p>
+
+      <div class="options">
+        @for (option of question.options; track option) {
+          <button
+            class="option-btn"
+            [class.correct]="answered() && option === question.correctAnswer"
+            [class.incorrect]="answered() && option === selectedAnswer() && !isCorrect()"
+            [class.dimmed]="answered() && option !== question.correctAnswer && option !== selectedAnswer()"
+            (click)="selectAnswer(option)"
+            [disabled]="answered()"
+          >
+            {{ option }}
+          </button>
+        }
+      </div>
+
+      <!-- Feedback -->
+      @if (answered()) {
+        <div class="feedback" [class.feedback-correct]="isCorrect()" [class.feedback-incorrect]="!isCorrect()">
+          <div class="feedback-icon">{{ isCorrect() ? '✅' : '❌' }}</div>
+          <div class="feedback-text">
+            <strong>{{ isCorrect() ? 'Well done!' : 'Not quite!' }}</strong>
+            <p>{{ question.explanation }}</p>
+          </div>
+        </div>
+        <button class="next-btn" (click)="next()">
+          {{ questionNumber === totalQuestions ? 'See Results' : 'Next Question' }}
+        </button>
+      }
+    </div>
+  </div>
+}

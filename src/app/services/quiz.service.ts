@@ -129,6 +129,6 @@ export class QuizService {
   }
 
   getAvailableWordClasses(): (WordClass | 'all')[] {
-    return ['all', 'noun', 'verb', 'adjective', 'adverb', 'pronoun', 'preposition', 'conjunction', 'determiner'];
+    return ['all'];
   }
 }

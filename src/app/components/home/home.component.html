@@ -1,10 +1,19 @@
 <div class="home-container">
   <header class="hero">
-    <h1>Word Classes Practice</h1>
-    <p class="subtitle">Year 6 SATs Revision</p>
-    <p class="description">
-      Choose a word class to practise, or try them all mixed together!
-    </p>
+    <h1>Year 6 SATs Revision</h1>
+    <p class="subtitle">Practice makes perfect!</p>
+  </header>
+
+  <!-- ── ENGLISH ──────────────────────────────────────── -->
+  <section class="subject-section">
+    <div class="subject-header">
+      <span class="subject-icon">📝</span>
+      <div>
+        <h2 class="subject-title">English — Word Classes</h2>
+        <p class="subject-desc">Identify nouns, verbs, adjectives, adverbs, and more.</p>
+      </div>
+    </div>
+
     <p class="question-count">
       @if (loadingGenerated) {
         <span class="count-loading">Loading question bank…</span>
@@ -12,42 +21,107 @@
         <span class="count-ready">{{ totalAvailable | number }} questions available</span>
       }
     </p>
-    <button class="learn-btn" (click)="goLearn()">📖 Learn Word Classes First</button>
-  </header>
 
-  <div class="settings-bar">
-    <label for="count">Questions per quiz:</label>
-    <select id="count" [(ngModel)]="questionCount">
-      <option [value]="5">5</option>
-      <option [value]="10">10</option>
-      <option [value]="15">15</option>
-      <option [value]="20">20</option>
-      <option [value]="30">30</option>
-      <option [value]="40">40</option>
-      <option [value]="50">50</option>
-    </select>
-  </div>
+    <div class="settings-bar">
+      <label for="count">Questions per quiz:</label>
+      <select id="count" [(ngModel)]="questionCount">
+        <option [value]="5">5</option>
+        <option [value]="10">10</option>
+        <option [value]="15">15</option>
+        <option [value]="20">20</option>
+        <option [value]="30">30</option>
+        <option [value]="40">40</option>
+        <option [value]="50">50</option>
+        <option [value]="100">100</option>
+      </select>
+    </div>
 
-  <div class="word-class-grid">
-    @for (wc of wordClasses; track wc) {
-      <button
-        class="word-class-card"
-        [style.border-color]="getColour(wc)"
-        [style.--card-colour]="getColour(wc)"
-        (click)="selectAndStart(wc)"
-      >
-        <span class="card-icon">{{ wc === 'all' ? '🌟' :
-          wc === 'noun' ? '📦' :
-          wc === 'verb' ? '🏃' :
-          wc === 'adjective' ? '🎨' :
-          wc === 'adverb' ? '⚡' :
-          wc === 'pronoun' ? '👤' :
-          wc === 'preposition' ? '📍' :
-          wc === 'conjunction' ? '🔗' :
-          '🔢' }}</span>
-        <span class="card-label">{{ getLabel(wc) }}</span>
-        <span class="card-desc">{{ getDescription(wc) }}</span>
+    <div class="card-row">
+      @for (wc of wordClasses; track wc) {
+        <button
+          class="subject-card"
+          [style.border-color]="getColour(wc)"
+          [style.--card-colour]="getColour(wc)"
+          (click)="selectAndStart(wc)"
+        >
+          <span class="card-icon">🌟</span>
+          <span class="card-label">{{ getLabel(wc) }}</span>
+          <span class="card-desc">{{ getDescription(wc) }}</span>
+        </button>
+      }
+      <button class="learn-card" (click)="goLearn()">
+        <span class="card-icon">📖</span>
+        <span class="card-label">Learn First</span>
+        <span class="card-desc">Study the word classes before you practise.</span>
       </button>
-    }
-  </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── MATHS ────────────────────────────────────────── -->
+  <section class="subject-section">
+    <div class="subject-header">
+      <span class="subject-icon">🔢</span>
+      <div>
+        <h2 class="subject-title">Maths — Formulas &amp; Shapes</h2>
+        <p class="subject-desc">Area, perimeter, circles, and volume.</p>
+      </div>
+    </div>
+
+    <p class="question-count">
+      <span class="count-ready">{{ mathTotalQuestions | number }} questions available</span>
+    </p>
+
+    <div class="settings-bar">
+      <label for="math-count">Questions per quiz:</label>
+      <select id="math-count" [(ngModel)]="mathQuestionCount">
+        <option [value]="5">5</option>
+        <option [value]="10">10</option>
+        <option [value]="15">15</option>
+        <option [value]="20">20</option>
+        <option [value]="30">30</option>
+      </select>
+    </div>
+
+    <div class="card-row">
+      @for (topic of mathTopics; track topic) {
+        <button
+          class="subject-card"
+          [style.border-color]="getMathColour(topic)"
+          [style.--card-colour]="getMathColour(topic)"
+          (click)="startMathQuiz(topic)"
+        >
+          <span class="card-icon">{{ getMathIcon(topic) }}</span>
+          <span class="card-label">{{ getMathLabel(topic) }}</span>
+          <span class="card-desc">{{ getMathDescription(topic) }}</span>
+        </button>
+      }
+      <button class="learn-card" (click)="goMathLearn()">
+        <span class="card-icon">📖</span>
+        <span class="card-label">Learn First</span>
+        <span class="card-desc">Study the formulas before you practise.</span>
+      </button>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── TIME ─────────────────────────────────────────── -->
+  <section class="subject-section">
+    <div class="subject-header">
+      <span class="subject-icon">🕐</span>
+      <div>
+        <h2 class="subject-title">Maths — Time</h2>
+        <p class="subject-desc">Read analog clocks and solve SAT-style time word problems.</p>
+      </div>
+    </div>
+    <div class="card-row">
+      <button class="subject-card time-card" (click)="goTime()">
+        <span class="card-icon">🕐</span>
+        <span class="card-label" style="color: #f39c12">Practice Time</span>
+        <span class="card-desc">Configure clock precision, 12/24-hour format, and question type.</span>
+      </button>
+    </div>
+  </section>
 </div>
